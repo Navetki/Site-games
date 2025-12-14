@@ -47,8 +47,8 @@ console.log(prod);
 // Задание 6
 
 let price = [9, 8, 7, "a", 6, 5];
-price = price.sort();
-console.log(price.pop());
+price = price.filter((item) => typeof item === "number").sort((a, b) => a - b);
+
 console.log(price);
 
 // Задание 7
