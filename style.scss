@@ -93,22 +93,32 @@ a {
   position: absolute;
 }
 .blockline {
-  overflow-y: scroll;
+  overflow: hidden;
+  position: relative;
 }
-
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .textline {
-  width: 5220px;
+  width: max-content;
   height: 90px;
   display: flex;
   align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(50px);
   background: rgb(188, 236, 48);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow: hidden;
   max-height: 87px;
   margin-left: -152px;
   justify-content: space-between;
+
+  animation: scroll-left 30s linear infinite;
 
   &__text {
     color: rgb(32, 32, 39);
@@ -116,9 +126,8 @@ a {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.8px;
-    padding-right: 46px;
-    padding-left: 46px;
-    line-height: 110%;
+    padding: 0 46px;
+    flex-shrink: 0;
   }
 }
 
@@ -372,5 +381,5 @@ a {
   padding-top: 61px;
 }
 
-@import "mobile";
 @import "tablet";
+@import "mobile";

@@ -1,1 +1,1 @@
-{"version":3,"sources":["tablet.scss","tablet.css"],"names":[],"mappings":"AAAA;EACE;IACE,+BAAA;IACA,gCAAA;ECCF;EDEA;IACE,aAAA;IACA,sBAAA;IACA,mBAAA;ECAF;AACF;ADEA;EACE,kBAAA;ACAF","file":"tablet.css"}
+{"version":3,"sources":["tablet.scss","tablet.css"],"names":[],"mappings":"AAAA;EACE;IACE,+BAAA;IACA,gCAAA;ECCF;EDEA;IACE,aAAA;IACA,sBAAA;IACA,mBAAA;ECAF;EDGA;IACE,kBAAA;ECDF;EDGA;IACE,YAAA;ECDF;EDIA;IACE,eAAA;IACA,eAAA;ECFF;EDKA;IACE,WAAA;IACA,YAAA;ECHF;AACF","file":"tablet.css"}
