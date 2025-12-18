@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="text">Lorem ipsum dolor sit</h1>
+    <p class="description">Привет, мир!</p>
+    <button class="btn">Изменить текст</button>
+    <p class="description">Текст,который необходимо заменить</p>
+    <p class="paragraf">Неизменяемый текст</p>
+    <p class="description">Еще один текст,который необходимо заменить</p>
+    <script>
+      const descriptionEl = document.querySelectorAll(".description");
+
+      descriptionEl.forEach((element) => {
+        element.textContent = "Новый текст";
+      });
+    </script>
+  </body>
+</html>
