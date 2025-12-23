@@ -96,11 +96,21 @@ a {
 }
 
 .blockline {
-  overflow-y: scroll;
+  overflow: hidden;
+  position: relative;
 }
 
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 .textline {
-  width: 5220px;
+  width: -moz-max-content;
+  width: max-content;
   height: 90px;
   display: flex;
   align-items: center;
@@ -108,11 +118,12 @@ a {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   background: rgb(188, 236, 48);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow: hidden;
   max-height: 87px;
   margin-left: -152px;
   justify-content: space-between;
+  animation: scroll-left 30s linear infinite;
 }
 .textline__text {
   color: rgb(32, 32, 39);
@@ -120,9 +131,8 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  padding-right: 46px;
-  padding-left: 46px;
-  line-height: 110%;
+  padding: 0 46px;
+  flex-shrink: 0;
 }
 
 .games-block {
@@ -359,6 +369,28 @@ a {
   padding-top: 61px;
 }
 
+@media (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 393px);
+    padding-right: calc(50% - 393px);
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .textline {
+    height: 71px;
+  }
+  .textline__text {
+    font-size: 24px;
+    padding: 0 30px;
+  }
+  .textline__star {
+    width: 28px;
+    height: 28px;
+  }
+}
 @media (max-width: 767px) {
   .center {
     padding-left: 16px;
@@ -380,7 +412,7 @@ a {
     font-weight: 700;
     line-height: 49px;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 0;
     margin-left: 38px;
     display: flex;
     flex-direction: column;
@@ -393,7 +425,7 @@ a {
     text-align: center;
     max-width: 296px;
     margin-left: 24px;
-    margin-bottom: 36px;
+    margin-bottom: 10px;
   }
   .btn {
     display: none;
@@ -419,18 +451,15 @@ a {
   }
   .textline {
     height: 51px;
-    margin-left: -10px;
-    justify-content: flex-start;
   }
   .textline__text {
     font-size: 16px;
-    letter-spacing: 4%;
-    padding-right: 18px;
-    padding-left: 27px;
+    padding: 0 20px;
+    letter-spacing: 1px;
   }
   .textline__star {
-    width: 19.34px;
-    height: 19.34px;
+    width: 20px;
+    height: 20px;
   }
   .games-title {
     margin-top: 48px;
@@ -489,18 +518,4 @@ a {
     padding-top: 40px;
     max-height: 100px;
   }
-}
-@media (max-width: 1024px) {
-  .center {
-    padding-left: calc(50% - 393px);
-    padding-right: calc(50% - 393px);
-  }
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.title {
-  text-align: center;
 }/*# sourceMappingURL=style.css.map */
